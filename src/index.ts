@@ -279,10 +279,10 @@ export class HubitatPlatform extends MatterbridgeDynamicPlatform {
       ep.setAttribute('relativeHumidityMeasurement', 'measuredValue', Math.round((Number(attr(dev, 'humidity')) || 0) * 100));
     }
     if (types.includes('contact')) {
-      ep.setAttribute('booleanState', 'stateValue', attr(dev, 'contact') !== 'open');
+      ep.setAttribute('booleanState', 'stateValue', attr(dev, 'contact') === 'open');
     }
     if (types.includes('water')) {
-      ep.setAttribute('booleanState', 'stateValue', attr(dev, 'water') !== 'wet');
+      ep.setAttribute('booleanState', 'stateValue', attr(dev, 'water') === 'wet');
     }
     if (types.includes('smoke')) {
       const detected = attr(dev, 'smoke') === 'detected';
@@ -333,10 +333,10 @@ export class HubitatPlatform extends MatterbridgeDynamicPlatform {
         if (types.includes('humidity')) ep.setAttribute('relativeHumidityMeasurement', 'measuredValue', Math.round((Number(evt.value) || 0) * 100));
         break;
       case 'contact':
-        if (types.includes('contact')) ep.setAttribute('booleanState', 'stateValue', evt.value !== 'open');
+        if (types.includes('contact')) ep.setAttribute('booleanState', 'stateValue', evt.value === 'open');
         break;
       case 'water':
-        if (types.includes('water')) ep.setAttribute('booleanState', 'stateValue', evt.value !== 'wet');
+        if (types.includes('water')) ep.setAttribute('booleanState', 'stateValue', evt.value === 'wet');
         break;
       case 'smoke':
         if (types.includes('smoke')) ep.setAttribute('smokeCoAlarm', 'smokeState', evt.value === 'detected' ? 1 : 0);
