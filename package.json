@@ -20,7 +20,6 @@
   "author": "rinseaid",
   "license": "MIT",
   "dependencies": {
-    "matterbridge": "^3.7.2",
     "ws": "^8.18.0"
   },
   "devDependencies": {
