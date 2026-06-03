@@ -1,0 +1,34 @@
+{
+  "name": "matterbridge-hubitat",
+  "version": "0.1.0",
+  "description": "Matterbridge plugin for Hubitat Elevation devices via EventSocket and Maker API",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "matterbridge",
+    "matter",
+    "hubitat",
+    "smart-home"
+  ],
+  "author": "rinseaid",
+  "license": "MIT",
+  "dependencies": {
+    "matterbridge": "^3.7.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
